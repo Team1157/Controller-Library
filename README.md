@@ -39,4 +39,8 @@ controller = XboxController()
 
 readDict = controller.read()
 print(readDict["lsy"]) # Print the value of the left joystick y
+# EX: 0.672638 (This will be a range of -1 to 1, inclusive)
+
+print(int(round(readDict["lsy"], 2) * 100)) # Print the value of the left joystick y but rounded to 2 spots and multiplied by 100
+# EX: 67 (This will be a range of -100 to 100, inclusive, and never have decimals)
 ```
