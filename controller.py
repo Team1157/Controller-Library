@@ -30,6 +30,8 @@ class XboxController(object):
         self.RightThumb = 0
         self.Back = 0
         self.Start = 0
+        self.Share = 0
+        self.Xbox = 0
         self.DPadX = 0
         self.DPadY = 0
 
@@ -50,6 +52,8 @@ class XboxController(object):
                     'rs': self.RightThumb,
                     'back': self.Back,
                     'start': self.Start,
+                    'share': self.Share,
+                    'xbox': self.Xbox,
                     'lb': self.LeftBumper,
                     'rb': self.RightBumper,
                     'dx': self.DPadX,
@@ -82,6 +86,7 @@ class XboxController(object):
                 events = inputs.get_gamepad()
                 # use event codes to set input values
                 for event in events:
+                    print(event.code)
                     #print(event.code + ": " + str(event.state)) # print code/value for debugging
                     if event.code == 'ABS_Y':
                         self.LeftJoystickY = event.state / XboxController.MAX_JOY_VAL # normalize between -1 and 1
@@ -115,10 +120,15 @@ class XboxController(object):
                         self.Back = event.state
                     elif event.code == 'BTN_START':
                         self.Start = event.state
+                    elif event.code == 'KEY_RECORD':
+                        self.Share = event.state
+                    elif event.code == 'BTN_MODE':
+                        self.Xbox = event.state
                     elif event.code == 'ABS_HAT0X':
                         self.DPadX = event.state
                     elif event.code == 'ABS_HAT0Y':
                         self.DPadY = event.state
+                    
         except:
             print("Controller Disconnected, Please restart your program!")
 
