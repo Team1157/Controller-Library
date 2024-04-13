@@ -86,7 +86,6 @@ class XboxController(object):
                 events = inputs.get_gamepad()
                 # use event codes to set input values
                 for event in events:
-                    print(event.code)
                     #print(event.code + ": " + str(event.state)) # print code/value for debugging
                     if event.code == 'ABS_Y':
                         self.LeftJoystickY = event.state / XboxController.MAX_JOY_VAL # normalize between -1 and 1
