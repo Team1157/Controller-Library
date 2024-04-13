@@ -22,8 +22,8 @@ The code has been adapted to fit our needs, but remains under the MIT License.
 - `"rb"`: Right Bumper
 - `"dx"`: D-Pad X
 - `"dy"`: D-Pad Y
-- `"lt"`: Left Trigger (-1 to 1)
-- `"rt"`: Right Trigger (-1 to 1)
+- `"lt"`: Left Trigger (0 to 1)
+- `"rt"`: Right Trigger (0 to 1)
 - `"lsx"`: Left Joystick X (-1 to 1)
 - `"lsy"`: Left Joystick Y (-1 to 1)
 - `"rsx"`: Right Joystick X (-1 to 1)
